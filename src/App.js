@@ -37,6 +37,7 @@ function App() {
     <section className="section-div">
        <form className="form-classname" onSubmit={handleSubmit}>
         {state.isModalOpen && <Alert /> }
+        <h3>Grocery bud</h3>
        </form>
        <div>
           <List />
