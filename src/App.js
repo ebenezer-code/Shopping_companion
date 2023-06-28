@@ -49,12 +49,12 @@ function App() {
 
   return (
     <section className="section-div">
-       <form className="form-classname">
+       <form className="form-classname" onSubmit={handleSubmit}>
         {state.isModalOpen && <Alert /> }
         <h3>Grocery bud</h3>
         <div className="input-div">
           <input type="text" className="grocery" placeholder="Enter grocery list" value={inputText} onChange={(e) => setInputText(e.target.value)} ref={refContainer}/>
-          <button type="submit" className = {state.isEditing ? "grocery-btn-edit" : "grocery-btn"} onSubmit={handleSubmit}> 
+          <button type="submit" className = {state.isEditing ? "grocery-btn-edit" : "grocery-btn"}> 
             {state.isEditing ? "Edit" : "Submit"}  
           </button>
         </div>
