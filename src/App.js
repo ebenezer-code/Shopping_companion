@@ -38,10 +38,14 @@ function App() {
        <form className="form-classname" onSubmit={handleSubmit}>
         {state.isModalOpen && <Alert /> }
         <h3>Grocery bud</h3>
+        <div className="input-div">
+          <input type="text"/>
+          <button type="button">Submit</button>
+        </div>
        </form>
        <div>
           <List />
-          <button type="btn">clear items</button>
+          <button type="button">clear items</button>
        </div>
     </section>
   );
