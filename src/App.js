@@ -25,9 +25,9 @@ function App() {
     const refContainer = useRef(null);
 
 
-    // useEffect(() => {
-    //   refContainer.current.focus();
-    // },[])
+    useEffect(() => {
+      refContainer.current.focus();
+    },[])
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -35,12 +35,12 @@ function App() {
 
   return (
     <section className="section-div">
-       <form className="form-classname" onSubmit={handleSubmit}>
+       <form className="form-classname">
         {state.isModalOpen && <Alert /> }
         <h3>Grocery bud</h3>
         <div className="input-div">
           <input type="text" className="grocery" placeholder="Enter grocery list" value={inputText} onChange={(e) => setInputText(e.target.value)} ref={refContainer}/>
-          <button type="submit" className = {state.isEditing ? "grocery-btn-edit" : "grocery-btn"}>
+          <button type="submit" className = {state.isEditing ? "grocery-btn-edit" : "grocery-btn"} onSubmit={handleSubmit}> 
             {state.isEditing ? "Edit" : "Submit"}  
           </button>
         </div>
