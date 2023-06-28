@@ -35,8 +35,8 @@ function App() {
 
   return (
     <section className="section-div">
-       <form className="form-classname">
-        {state.isModalOpen && <Alert />}
+       <form className="form-classname" onSubmit={handleSubmit}>
+        {state.isModalOpen && <Alert /> }
        </form>
        <div>
           <List />
