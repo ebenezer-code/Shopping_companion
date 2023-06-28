@@ -5,7 +5,15 @@ import './App.css';
 
 
 const reducer = (state, action) => {
-
+  const newItems = [...state.inputArray, action.payload];
+  if(action.type === "Add_Item") {
+    return {
+      ...state,
+      inputArray: newItems,
+      isModalOpen: true,
+      modalContent: "Item Added"
+    }
+  }
 }
 
 const defaultState = {
@@ -31,6 +39,12 @@ function App() {
 
     const handleSubmit = (e) => {
       e.preventDefault();
+      if(inputText) {
+        const newItem = {id: new Date().getTime().toLocaleString(), inputText}
+        dispatch({type: "Add_Item", payload: newItem});
+      }else {
+        dispatch({type: "No_Item"});
+      }
     }
 
   return (
