@@ -40,14 +40,14 @@ function App() {
         <h3>Grocery bud</h3>
         <div className="input-div">
           <input type="text"/>
-          <button type="submit">
+          <button type="submit" className = {state.isEditing ? "grocery-btn-edit" : "grocery-btn"}>
             {state.isEditing ? "Edit" : "Submit"}  
           </button>
         </div>
        </form>
-       <div>
+       <div className="grocery-container">
           <List />
-          <button type="submit">clear items</button>
+          <button type="submit" className="grocery-btn">clear items</button>
        </div>
     </section>
   );
