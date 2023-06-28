@@ -39,7 +39,7 @@ function App() {
         {state.isModalOpen && <Alert /> }
         <h3>Grocery bud</h3>
         <div className="input-div">
-          <input type="text"/>
+          <input type="text" className="grocery" placeholder="Enter grocery list"/>
           <button type="submit" className = {state.isEditing ? "grocery-btn-edit" : "grocery-btn"}>
             {state.isEditing ? "Edit" : "Submit"}  
           </button>
