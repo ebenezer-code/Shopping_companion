@@ -42,6 +42,7 @@ function App() {
       if(inputText) {
         const newItem = {id: new Date().getTime().toLocaleString(), inputText}
         dispatch({type: "Add_Item", payload: newItem});
+        setInputText("")
       }else {
         dispatch({type: "No_Item"});
       }
