@@ -1,11 +1,17 @@
 import React from "react";
 
 
-
-function List () {
+function List ({inputItems}) {
    return (
-    <div>
-        List Component
+    <div>  
+       {inputItems.map((item) => {
+        const {id, inputText} = item;
+        return (
+            <div key={id}>
+                <li>{inputText}</li>
+            </div>
+        )
+       })}
     </div>
    )
 }
