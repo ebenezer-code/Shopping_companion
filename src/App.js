@@ -63,7 +63,7 @@ function App() {
       }
     }
     const clearItems = () => {
-      if(inputText) {
+      if(state.inputArray) {
         dispatch({type: "Clear_Item"});
       }
     }
@@ -71,7 +71,7 @@ function App() {
   return (
     <section className="section-div">
        <form className="form-classname" onSubmit={handleSubmit}>
-        {state.isModalOpen && <Alert /> }
+        {state.isModalOpen && <Alert modalContent = {state.modalContent}/> }
         <h3>Grocery bud</h3>
         <div className="input-div">
           <input type="text" className="grocery" placeholder="Enter grocery list" value={inputText} onChange={(e) => setInputText(e.target.value)} ref={refContainer}/>
@@ -81,7 +81,7 @@ function App() {
         </div>
        </form>
        <div className="grocery-container">
-          <List />
+          <List inputItems = {state.inputArray}/>
           <button type="submit" className="grocery-btn" onClick={() => clearItems}>clear items</button>
        </div>
     </section>
