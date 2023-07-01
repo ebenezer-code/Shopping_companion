@@ -14,6 +14,13 @@ const reducer = (state, action) => {
       modalContent: "Item Added"
     }
   }
+  if(action.type === "No_Item") {
+    return {
+      ...state,
+      isModalOpen: true,
+      modalContent: "Insert Item"
+    }
+  }
 }
 
 const defaultState = {
