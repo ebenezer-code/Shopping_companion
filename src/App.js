@@ -21,6 +21,14 @@ const reducer = (state, action) => {
       modalContent: "Insert Item"
     }
   }
+  if(action.type === "Clear_Item") {
+    return {
+      ...state,
+      inputArray: [],
+      isModalOpen: true,
+      modalContent: "Items Cleared"
+    }
+  }
 }
 
 const defaultState = {
@@ -54,6 +62,11 @@ function App() {
         dispatch({type: "No_Item"});
       }
     }
+    const clearItem = () => {
+      if(inputText) {
+        dispatch({type: "Clear_Item"});
+      }
+    }
 
   return (
     <section className="section-div">
@@ -69,7 +82,7 @@ function App() {
        </form>
        <div className="grocery-container">
           <List />
-          <button type="submit" className="grocery-btn">clear items</button>
+          <button type="submit" className="grocery-btn" onClick={() => clearItem}>clear items</button>
        </div>
     </section>
   );
