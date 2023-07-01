@@ -62,7 +62,7 @@ function App() {
         dispatch({type: "No_Item"});
       }
     }
-    const clearItem = () => {
+    const clearItems = () => {
       if(inputText) {
         dispatch({type: "Clear_Item"});
       }
@@ -82,7 +82,7 @@ function App() {
        </form>
        <div className="grocery-container">
           <List />
-          <button type="submit" className="grocery-btn" onClick={() => clearItem}>clear items</button>
+          <button type="submit" className="grocery-btn" onClick={() => clearItems}>clear items</button>
        </div>
     </section>
   );
